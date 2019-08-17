@@ -43,3 +43,7 @@ body {
 	background-color: black;
 	color: orange;
 }
+
+.navbar-brand {
+	font-size: 25px;
+}
