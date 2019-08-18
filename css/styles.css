@@ -47,3 +47,7 @@ body {
 .navbar-brand {
 	font-size: 25px;
 }
+
+.formTittle {
+	padding-top: 5px;
+}
