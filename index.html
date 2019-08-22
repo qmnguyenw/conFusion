@@ -92,17 +92,79 @@
                     <img src="img/logo.png" class="img-fluid">
                 </div>
                 <div class="col-12 col-sm align-self-center">
-                    <input class="btn btn-block nav-link btn-warning" 
+                    <!-- <input class="btn btn-block nav-link btn-warning" 
                     data-toggle="tooltip" data-html="true" title="or call us at <br><strong>+852 1234</strong>" data-placement="bottom" 
-                    type="submit" value="Reserve">
-
+                    type="submit" value="Reserve"> -->
                     <!-- <a role="button" class="btn btn-block nav-link btn-warning"
                         data-toggle="tooltip" data-html="true"  title="Or Call us at  <br><strong>+852 12345678</strong>"
                         data-placement="bottom" href="#reserveform">Reserve Table</a> -->
+
+                    <input class="btn btn-block nav-link btn-warning" 
+                    data-toggle="modal" data-target="#reserveform" title="or call us at <br><strong>+852 1234</strong>" data-placement="bottom" 
+                    type="submit" value="Reserve">
+
+
                 </div>
             </div>
         </div>
     </header>
+
+    <div id="reserveform" class="modal fade" role="dialog">
+        <div class="modal-dialog modal-lg" role="content">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h3 class="modal-title">Reserve a Table</h3>
+                    <button type="button" class="close" data-dismiss="modal">
+                        &times;
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <form action="" method="post">
+                        <dl class="row">
+                            <dt class="col-4 mb-4">Number of Guests</dt>
+                            <dd class="col-8 mb-4">
+                                <input type="radio" name="guestNumber" value="1"> 1 <span class="px-2"></span>
+                                <input type="radio" name="guestNumber" value="2"> 2 <span class="px-2"></span>
+                                <input type="radio" name="guestNumber" value="3"> 3 <span class="px-2"></span>
+                                <input type="radio" name="guestNumber" value="4"> 4 <span class="px-2"></span>
+                                <input type="radio" name="guestNumber" value="5"> 5 <span class="px-2"></span>
+                                <input type="radio" name="guestNumber" value="6"> 6 <span class="px-2"></span>
+                            </dd>
+                            <dt class="col-4 mb-4">Section</dt>
+                            <dd class="col-8 mb-4">
+                                <label class="btn btn-secondary active px-2">
+                                    <input type="radio" name="section" value="nonsmoke" checked> Non-smoking 
+                                </label>
+                                <label class="btn btn-secondary px-2">
+                                    <input type="radio" name="section" value="smoke"> Smoking 
+                                </label>
+                            </dd>
+                            <dt class="col-4 mb-4">Date and Time</dt>
+                            <dd class="col-8 mb-4">
+                                <div class="form-group row">
+                                    <div class="col-4 col-sm-5">
+                                        <input type="text" class="form-control" id="dateBook" name="dateBook" placeholder="Date">
+                                    </div>
+                                    <div class="col-4 col-sm-5">
+                                        <input type="text" class="form-control" id="timeBook" name="timeBook" placeholder="Time">
+                                    </div>
+                                </div>
+                            </dd>
+                            <span class="col-sm-4 ml-3"></span>
+                            <input id="Reserve" class="btn btn-primary btn-sm ml-auto" type="submit" name="Reserve" value="Reserve">
+                            <button type="button" class="btn btn-secondary btn-sm ml-auto" data-dismiss="modal">Cancel</button>
+                            <span class="col-sm"></span>
+
+                            <!-- <div class="form-row">
+                                <button type="submit" class="btn btn-primary btn-sm ml-1" id="Reserve" type="submit" name="Reserve" value="Reserve">Sign in</button>
+                                <button type="button" class="btn btn-secondary btn-sm ml-auto" data-dismiss="modal">Cancel</button>
+                            </div> -->
+                        </dl>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
 
     <div class="container">
 
@@ -198,11 +260,12 @@
             <div class="col"></div>
             <div class="col-12 col-sm-8 align-content-center">
                 <div class="card">
-                    <h3 id="reserveform" class="card-header bg-warning text-white">Reserve a Table</h3>
+                    <!-- <h3 id="reserveform" class="card-header bg-warning text-white">Reserve a Table</h3> -->
+                    <h3 class="card-header bg-warning text-white">Reserve a Table</h3>
                     <div class="card-body">
                         <form action="" method="post">
                             <dl class="row">
-                                <dt class="col-4 mb-4 formTittle">Number of Guests</dt>
+                                <dt class="col-4 mb-4">Number of Guests</dt>
                                 <dd class="col-8 mb-4">
                                     <input type="radio" name="guestNumber" value="1"> 1 <span class="px-2"></span>
                                     <input type="radio" name="guestNumber" value="2"> 2 <span class="px-2"></span>
@@ -211,7 +274,7 @@
                                     <input type="radio" name="guestNumber" value="5"> 5 <span class="px-2"></span>
                                     <input type="radio" name="guestNumber" value="6"> 6 <span class="px-2"></span>
                                 </dd>
-                                <dt class="col-4 mb-4 formTittle">Date and Time</dt>
+                                <dt class="col-4 mb-4">Date and Time</dt>
                                 <dd class="col-8 mb-4">
                                     <div class="form-group row">
                                         <div class="col-4 col-sm-5">
@@ -224,7 +287,6 @@
                                         </div>
                                     </div>
                                 </dd>
-                                <!-- <dt class="col-4"> </dt> -->
                                 <span class="col-sm-4 ml-3"></span>
                                 <input id="Reserve" class="col-sm-2 btn btn-primary" type="submit" name="Reserve" value="Reserve">
                                 <span class="col-sm"></span>
@@ -282,11 +344,11 @@
     <script src="node_modules/jquery/dist/jquery.slim.min.js"></script>
     <script src="node_modules/popper.js/dist/popper.min.js"></script>
     <script src="node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
-    <script>
+<!--     <script>
         $(document).ready(function(){
             $('[data-toggle="tooltip"]').tooltip();
         });
-    </script>
+    </script> -->
     
 </body>
 
