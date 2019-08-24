@@ -17,7 +17,10 @@
     <link rel="stylesheet" type="text/css" href="node_modules/font-awesome/css/font-awesome.min.css">
 
     <!-- CSS bonus -->
-    <link rel="stylesheet" type="text/css" href="css/styles.css">
+    <!-- CSS old can use with jQuery -->
+    <!-- <link rel="stylesheet" type="text/css" href="css/styles-old.css"> -->
+    <!-- CSS old cannot use with jQuery -->
+    <link rel="stylesheet" type="text/css" href="css/styles-less.css">
 
 </head>
 
@@ -382,7 +385,7 @@
         //script to set time, play and pause carousel with only one button
         $(document).ready(function(){
             $("#mycarousel").carousel( {
-                interval: 5
+                interval: 500
             });
             $("#carouselButton").click(function(){
                 if ($("#carouselButton").children("span").hasClass('fa-pause')) {
