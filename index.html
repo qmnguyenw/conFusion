@@ -41,15 +41,19 @@
                  <li class="nav-item"><a class="nav-link" href="#"><span class="fa fa-address-card fa-sm"/>Contact</a></li>
              </ul>
              <span class="navbar-text">
-                 <a href="" data-toggle="modal" data-target="#loginModal">
+                 <!-- Bootstrap jQuery JS to open modal -->
+                 <!-- <a href="" data-toggle="modal" data-target="#loginModal">
                      <span class="fa fa-sign-in"></span>Login
-                 </a>
+                 </a> -->
+				 <!-- jQuery JS to open modal -->
+                 <a href="#" id="loginButton"><span class="fa fa-sign-in"></span> Login</a>
              </span>
          </div>
      </div>   
     </nav>
 
-    <div id="loginModal" class="modal fade" role="dialog">
+    <!-- <div id="loginModal" class="modal fade" role="dialog"> -->
+    <div id="loginModal" class="modal" role="dialog">
         <div class="modal-dialog modal-lg" role="content">
             <div class="modal-content">
                 <div class="modal-header">
@@ -98,18 +102,20 @@
                     <img src="img/logo.png" class="img-fluid">
                 </div>
                 <div class="col-12 col-sm align-self-center">
-                    <!-- <input class="btn btn-block nav-link btn-warning" 
-                    data-toggle="tooltip" data-html="true" title="or call us at <br><strong>+852 1234</strong>" data-placement="bottom" 
-                    type="submit" value="Reserve"> -->
-                    <!-- <a role="button" class="btn btn-block nav-link btn-warning"
-                        data-toggle="tooltip" data-html="true"  title="Or Call us at  <br><strong>+852 12345678</strong>"
-                        data-placement="bottom" href="#reserveform">Reserve Table</a> -->
-
-                    <input class="btn btn-block nav-link btn-warning" 
-                    data-toggle="modal" data-target="#reserveform" title="or call us at <br><strong>+852 1234</strong>" data-placement="bottom" 
-                    type="submit" value="Reserve">
-
-
+                    <!--- use tooltip Bootstrap JS -->
+                        <!-- <input id="reserveButton" class="btn btn-block nav-link btn-warning" 
+                        data-toggle="tooltip" data-html="true" title="or call us at <br><strong>+852 1234</strong>" data-placement="bottom" 
+                        type="submit" value="Reserve"> -->
+                        <!-- <a role="button" class="btn btn-block nav-link btn-warning"
+                            data-toggle="tooltip" data-html="true"  title="Or Call us at  <br><strong>+852 12345678</strong>"
+                            data-placement="bottom" href="#reserveform">Reserve Table</a> -->
+                    <!--- use data-* Bootstrap JS -->
+                        <!-- <input id="reserveButton" class="btn btn-block nav-link btn-warning" 
+                        data-toggle="modal" data-target="#reserveform" title="or call us at <br><strong>+852 1234</strong>" data-placement="bottom" 
+                        type="submit" value="Reserve Table"> -->
+                    <input id="reserveButton" class="btn btn-block nav-link btn-warning" 
+                    title="or call us at <br><strong>+852 1234</strong>" data-placement="bottom" 
+                    type="submit" value="Reserve Table">
                 </div>
             </div>
         </div>
@@ -173,7 +179,6 @@
     </div>
 
     <div class="container">
-
         <div class="row row-content">
             <div class="col">
                 <div id="mycarousel" class="carousel slide" data-ride="carousel">
@@ -373,6 +378,44 @@
     </script> -->
     
     <script>
+        //jQuery to make modal for Login button 
+    		$(document).ready(function(){
+    			$("#loginButton").click(function(){
+    				$("#loginModal").modal('show');
+    			});
+    		});
+		
+		// //JavaScript to make modal for Login button 
+		// 	// Get the modal
+		// 	var loginModal = document.getElementById("loginModal");
+		// 	// Get the button that opens the modal
+		// 	var loginButton = document.getElementById("loginButton");
+		// 	// Get the <span> element that closes the modal
+		// 	var closeButton = document.getElementsByClassName("close")[0];
+		// 	// When the user clicks the button, open the modal 
+		// 	loginButton.onclick = function() {
+		// 	  loginModal.style.display = "block";
+  //             loginModal.style.background = 'rgb(0,0,0)';
+  //             loginModal.style.background = 'rgba(0,0,0,0.4)';
+		// 	}
+		// 	// When the user clicks on <span> (x), close the modal
+		// 	closeButton.onclick = function() {
+		// 	  loginModal.style.display = "none";
+		// 	}
+		// 	// When the user clicks anywhere outside of the modal, close it
+		// 	window.onclick = function(event) {
+		// 	  if (event.target == loginModal) {
+		// 	    loginModal.style.display = "none";
+		// 	  }
+		// 	}
+
+		//jQuery to make modal for Reserve button
+			$(document).ready(function(){
+				$("#reserveButton").click(function(){
+					$("#reserveform").modal();
+				});
+			});
+
         //script to set time, play and pause carousel with 2 distinct button
         // $(document).ready(function(){
         //     $("#mycarousel").carousel( { interval: 2000 } );
